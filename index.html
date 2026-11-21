@@ -24,6 +24,16 @@
 <body>
 
     <main class="app">
+        <!-- Фоновая музыка -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="music/our-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Кнопка управления музыкой -->
+    <button class="music-button" id="musicButton" type="button">
+        <span class="music-icon">♫</span>
+        <span class="music-label">Включить музыку ♡</span>
+    </button>
     <div class="floating-hearts" aria-hidden="true">
         <span>♡</span>
         <span>♥</span>
@@ -54,7 +64,7 @@
             <div class="counter">
                 <span id="currentPage">01</span>
                 <span class="counter-divider">/</span>
-                <span>08</span>
+                <span>10</span>
             </div>
 
         </header>
@@ -148,10 +158,11 @@
 
             </article>
 
+            
             <!-- Экран 3 -->
             <article class="story-card" data-page="3">
 
-                <div class="story-content">
+                <div class="story-content love-screen">
 
                     <span class="section-label">ГЛАВА 02 · МОЯ КИСЯ</span>
 
@@ -160,20 +171,56 @@
                         <span>что я люблю?</span>
                     </h2>
 
-                    <div class="text-card">
-                        В тебе столько всего,
-                        от чего мне становится тепло.
-                        И я хочу, чтобы ты никогда
-                        не забывала, какая ты особенная.
+                    <p class="story-text">
+                        Я хочу показать тебе кое-что,
+                        малыш. Нажимай на сердечки ❤️
+                    </p>
+
+                    <div class="love-cards">
+
+                        <button class="love-card" type="button">
+                            <span class="love-card-heart">♡</span>
+                            <span class="love-card-title">Твою улыбку</span>
+                            <span class="love-card-text">
+                                Мне нравится, что даже в самый обычный день
+                                ты можешь подарить мне столько счастья
+                                одной своей улыбкой.
+                            </span>
+                            <span class="love-card-hint">Открой меня</span>
+                        </button>
+
+                        <button class="love-card" type="button">
+                            <span class="love-card-heart">♡</span>
+                            <span class="love-card-title">То, как мне с тобой</span>
+                            <span class="love-card-text">
+                                Рядом с тобой мне хочется быть собой,
+                                обнимать тебя и никуда не торопиться.
+                            </span>
+                            <span class="love-card-hint">Открой меня</span>
+                        </button>
+
+                        <button class="love-card" type="button">
+                            <span class="love-card-heart">♡</span>
+                            <span class="love-card-title">То, что ты есть</span>
+                            <span class="love-card-text">
+                                Я не знаю, как так получилось,
+                                что мне настолько повезло с тобой.
+                                Но я очень благодарен за это.
+                            </span>
+                            <span class="love-card-hint">Открой меня</span>
+                        </button>
+
                     </div>
 
-                    <p class="story-highlight">
-                        Ты — моя любимая девочка. ♡
-                    </p>
+                    <div class="love-final-message" id="loveFinalMessage">
+                        А вообще, кися, я люблю тебя гораздо сильнее,
+                        чем могут описать любые слова. ❤️
+                    </div>
 
                 </div>
 
             </article>
+
 
             <!-- Экран 4 -->
             <article class="story-card" data-page="4">
@@ -304,6 +351,82 @@
             </article>
 
 
+            <!-- Экран: Почему я тебя люблю -->
+            <article class="story-card reasons-screen">
+                <div class="section-label">A FEW REASONS WHY I LOVE YOU</div>
+
+                <h2>Почему я тебя люблю?</h2>
+
+                <p class="story-text">
+                    На самом деле причин гораздо больше.
+                    Но вот несколько, которые я хочу тебе показать ❤️
+                </p>
+
+                <div class="reasons-grid">
+
+                    <button class="reason-card" type="button">
+                        <span class="reason-heart">♡</span>
+                        <span class="reason-title">Твоя улыбка</span>
+                        <span class="reason-hidden">
+                            Потому что, когда ты улыбаешься, я невольно начинаю улыбаться тоже.
+                        </span>
+                        <span class="reason-hint">Нажми, чтобы открыть</span>
+                    </button>
+
+                    <button class="reason-card" type="button">
+                        <span class="reason-heart">♡</span>
+                        <span class="reason-title">Твоя нежность</span>
+                        <span class="reason-hidden">
+                            Мне безумно нравится то тепло, которое я чувствую рядом с тобой.
+                        </span>
+                        <span class="reason-hint">Нажми, чтобы открыть</span>
+                    </button>
+
+                    <button class="reason-card" type="button">
+                        <span class="reason-heart">♡</span>
+                        <span class="reason-title">Твой характер</span>
+                        <span class="reason-hidden">
+                            Мне нравится узнавать тебя всё больше — со всеми твоими привычками и особенностями.
+                        </span>
+                        <span class="reason-hint">Нажми, чтобы открыть</span>
+                    </button>
+
+                    <button class="reason-card" type="button">
+                        <span class="reason-heart">♡</span>
+                        <span class="reason-title">Наши моменты</span>
+                        <span class="reason-hidden">
+                            Даже самые обычные вещи становятся особенными, когда мы делаем их вместе.
+                        </span>
+                        <span class="reason-hint">Нажми, чтобы открыть</span>
+                    </button>
+
+                    <button class="reason-card" type="button">
+                        <span class="reason-heart">♡</span>
+                        <span class="reason-title">Твои объятия</span>
+                        <span class="reason-hidden">
+                            Потому что рядом с тобой мне особенно хорошо и спокойно.
+                        </span>
+                        <span class="reason-hint">Нажми, чтобы открыть</span>
+                    </button>
+
+                    <button class="reason-card" type="button">
+                        <span class="reason-heart">♡</span>
+                        <span class="reason-title">Просто ты</span>
+                        <span class="reason-hidden">
+                            Потому что мне не нужна какая-то особенная причина. Я люблю именно тебя, малыш.
+                        </span>
+                        <span class="reason-hint">Нажми, чтобы открыть</span>
+                    </button>
+
+                </div>
+
+                <p class="reasons-footer">
+                    И это только малая часть причин, любимая. ❤️
+                </p>
+            </article>
+
+
+
             <!-- Экран 6 -->
             <article class="story-card" data-page="6">
 
@@ -326,6 +449,42 @@
                     <p class="story-highlight">
                         Впереди столько всего нашего. ♡
                     </p>
+
+                    <div class="relationship-counter">
+
+                        <span class="counter-label">МЫ ВМЕСТЕ УЖЕ</span>
+
+                        <div class="live-counter">
+
+                            <div class="time-unit">
+                                <span id="daysTogether">0</span>
+                                <small>дней</small>
+                            </div>
+
+                            <div class="time-unit">
+                                <span id="hoursTogether">00</span>
+                                <small>часов</small>
+                            </div>
+
+                            <div class="time-unit">
+                                <span id="minutesTogether">00</span>
+                                <small>минут</small>
+                            </div>
+
+                            <div class="time-unit">
+                                <span id="secondsTogether">00</span>
+                                <small>секунд</small>
+                            </div>
+
+                        </div>
+
+                        <div class="counter-date">
+                            С 24 октября 2026 года, 17:50 ♡
+                        </div>
+
+                        <div class="counter-decoration">♥</div>
+
+                    </div>
 
                 </div>
 
@@ -380,7 +539,7 @@
                         </button>
 
                         <div class="gift-result" id="giftResult">
-                            <h3>10 000 ₽</h3>
+                            <h3>8 000 ₽</h3>
                             <p>
                                 На холодное восстановление волос!
                             </p>

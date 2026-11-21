@@ -265,3 +265,135 @@ if (openLetterButton && letterPaper) {
     });
 }
 
+
+
+/* =========================================
+   ОТКРЫТИЕ ПРИЧИН ЛЮБВИ
+========================================= */
+
+const reasonCards = document.querySelectorAll(".reason-card");
+
+reasonCards.forEach(function (card) {
+    card.addEventListener("click", function () {
+        card.classList.toggle("opened");
+
+        const heart = card.querySelector(".reason-heart");
+
+        if (card.classList.contains("opened")) {
+            heart.textContent = "♥";
+        } else {
+            heart.textContent = "♡";
+        }
+    });
+});
+
+// ======================================
+// СЧЁТЧИК НАШИХ ДНЕЙ ВМЕСТЕ ❤️
+// ======================================
+
+// Начало отношений: 24 октября 2026, 17:50 по Москве
+const relationshipStart = new Date("2026-10-24T17:50:00+03:00").getTime();
+
+function updateRelationshipCounter() {
+
+    const now = Date.now();
+
+    let difference = now - relationshipStart;
+
+    // Если дата начала ещё не наступила
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("daysTogether").textContent = days;
+    document.getElementById("hoursTogether").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutesTogether").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("secondsTogether").textContent = String(seconds).padStart(2, "0");
+}
+
+// Сразу обновляем счётчик
+updateRelationshipCounter();
+
+// Обновляем каждую секунду
+setInterval(updateRelationshipCounter, 1000);
+
+
+// ======================================
+// ИНТЕРАКТИВНЫЕ ПРИЗНАНИЯ ДЛЯ КРИСТЮШИ ❤️
+// ======================================
+
+const loveCards = document.querySelectorAll(".love-card");
+const loveFinalMessage = document.getElementById("loveFinalMessage");
+
+loveCards.forEach(function (card) {
+
+    card.addEventListener("click", function () {
+
+        // Если карточка уже открыта — ничего не делаем
+        if (card.classList.contains("opened")) return;
+
+        // Открываем сердечко
+        card.classList.add("opened");
+
+        // Меняем пустое сердечко на заполненное
+        const heart = card.querySelector(".love-card-heart");
+        heart.textContent = "♥";
+
+        // Проверяем, открыты ли все три признания
+        const openedCards = document.querySelectorAll(".love-card.opened");
+
+        if (openedCards.length === loveCards.length) {
+
+            setTimeout(function () {
+                loveFinalMessage.classList.add("show");
+            }, 500);
+
+        }
+
+    });
+
+});
+
+// ======================================
+// ФОНОВАЯ МУЗЫКА НАШЕЙ ИСТОРИИ 🎵
+// ======================================
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+const musicLabel = musicButton.querySelector(".music-label");
+const musicIcon = musicButton.querySelector(".music-icon");
+
+musicButton.addEventListener("click", async function () {
+
+    if (backgroundMusic.paused) {
+
+        try {
+            await backgroundMusic.play();
+
+            musicButton.classList.add("playing");
+            musicLabel.textContent = "Музыка играет ♡";
+            musicIcon.textContent = "♫";
+
+        } catch (error) {
+            console.log("Не удалось запустить музыку:", error);
+            musicLabel.textContent = "Попробуй ещё раз ♡";
+        }
+
+    } else {
+
+        backgroundMusic.pause();
+
+        musicButton.classList.remove("playing");
+        musicLabel.textContent = "Включить музыку ♡";
+        musicIcon.textContent = "♫";
+
+    }
+
+});

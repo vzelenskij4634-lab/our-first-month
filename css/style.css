@@ -1308,3 +1308,377 @@ button:active {
         ) scale(0.6) rotate(45deg);
     }
 }
+
+
+
+/* =========================================
+   ПОЧЕМУ Я ТЕБЯ ЛЮБЛЮ
+========================================= */
+
+.reasons-screen {
+    text-align: center;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 25px auto 18px;
+    width: 100%;
+    max-width: 390px;
+}
+
+.reason-card {
+    min-height: 145px;
+    padding: 17px 10px;
+    border: 1px solid #f0d5df;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #fffafd, #fff0f5);
+    color: #9e526f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(190, 92, 130, 0.07);
+}
+
+.reason-heart {
+    font-size: 30px;
+    line-height: 1;
+    color: #d77f9f;
+    transition: transform 0.35s ease;
+}
+
+.reason-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.reason-hint {
+    font-size: 10px;
+    color: #b58b9b;
+}
+
+.reason-hidden {
+    display: none;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #81576a;
+    animation: reasonReveal 0.45s ease both;
+}
+
+.reason-card.opened {
+    background: linear-gradient(145deg, #ffe8f0, #fff8fb);
+    border-color: #e7adc1;
+}
+
+.reason-card.opened .reason-heart {
+    transform: scale(1.2);
+    color: #c85f86;
+}
+
+.reason-card.opened .reason-hidden {
+    display: block;
+}
+
+.reason-card.opened .reason-hint {
+    display: none;
+}
+
+@keyframes reasonReveal {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reasons-footer {
+    color: #b47790;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-style: italic;
+    margin: 18px auto 5px;
+}
+
+@media (max-width: 360px) {
+    .reasons-grid {
+        gap: 8px;
+    }
+
+    .reason-card {
+        min-height: 135px;
+        padding: 13px 7px;
+    }
+
+    .reason-title {
+        font-size: 18px;
+    }
+
+    .reason-hidden {
+        font-size: 11px;
+    }
+}
+
+/* ======================================
+   СЧЁТЧИК НАШИХ ДНЕЙ
+====================================== */
+
+/* ======================================
+   СЧЁТЧИК НАШИХ ДНЕЙ
+====================================== */
+
+.relationship-counter {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    margin: 25px auto 10px;
+    padding: 22px 12px;
+    text-align: center;
+    background: linear-gradient(145deg, #fffafd, #fff0f5);
+    border: 1px solid #f2d4df;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(190, 92, 130, 0.09);
+    overflow: hidden;
+}
+
+.counter-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #b77a91;
+    margin-bottom: 17px;
+}
+
+.live-counter {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px;
+    align-items: center;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+}
+
+.time-unit span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(27px, 8vw, 39px);
+    line-height: 1;
+    font-weight: 600;
+    color: #b85f7f;
+    font-variant-numeric: tabular-nums;
+}
+
+.time-unit small {
+    font-size: 9px;
+    color: #a77b8c;
+    letter-spacing: 0.5px;
+}
+
+.counter-date {
+    margin-top: 18px;
+    font-size: 11px;
+    color: #a77b8c;
+    letter-spacing: 0.3px;
+}
+
+.counter-decoration {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    color: #e8a6bb;
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+
+/* ======================================
+   ИНТЕРАКТИВНЫЕ ПРИЗНАНИЯ
+====================================== */
+
+.love-screen {
+    text-align: center;
+}
+
+.love-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 340px;
+    margin: 22px auto;
+}
+
+.love-card {
+    position: relative;
+    width: 100%;
+    min-height: 85px;
+    padding: 15px 18px;
+    border: 1px solid #f0d5df;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #fffafd, #fff0f5);
+    color: #9e526f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(190, 92, 130, 0.07);
+    transition: all 0.35s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.love-card:active {
+    transform: scale(0.97);
+}
+
+.love-card-heart {
+    font-size: 27px;
+    line-height: 1;
+    color: #d783a0;
+    transition: transform 0.4s ease;
+}
+
+.love-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.love-card-text {
+    display: none;
+    max-width: 270px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #81576a;
+    animation: loveReveal 0.5s ease both;
+}
+
+.love-card-hint {
+    font-size: 10px;
+    color: #bd91a2;
+    letter-spacing: 0.5px;
+}
+
+.love-card.opened {
+    background: linear-gradient(145deg, #fff0f5, #ffe5ee);
+    border-color: #e9b5c8;
+    box-shadow: 0 8px 22px rgba(190, 92, 130, 0.13);
+}
+
+.love-card.opened .love-card-heart {
+    transform: scale(1.25);
+    color: #c75d83;
+}
+
+.love-card.opened .love-card-text {
+    display: block;
+}
+
+.love-card.opened .love-card-hint {
+    display: none;
+}
+
+.love-final-message {
+    max-width: 320px;
+    margin: 18px auto 5px;
+    padding: 15px;
+    color: #b85f7f;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+}
+
+.love-final-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes loveReveal {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ======================================
+   ФОНОВАЯ МУЗЫКА
+====================================== */
+
+.music-button {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 14px;
+    border: 1px solid #f0d5df;
+    border-radius: 30px;
+
+    background: rgba(255, 250, 252, 0.92);
+    color: #b85f7f;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+
+    box-shadow: 0 4px 15px rgba(190, 92, 130, 0.09);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.music-button:active {
+    transform: scale(0.95);
+}
+
+.music-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.music-button.playing .music-icon {
+    animation: musicPulse 1s ease-in-out infinite;
+}
+
+.music-button.playing {
+    background: linear-gradient(145deg, #fff0f5, #ffe5ee);
+    border-color: #e9b5c8;
+}
+
+@keyframes musicPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
